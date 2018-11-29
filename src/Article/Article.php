@@ -21,6 +21,7 @@ final class Article
         string $body,
         \DateTimeImmutable $creationDate
     ) {
+        $this->id = $id;
         $this->title = $title;
         $this->body = $body;
         $this->creationDate = $creationDate;
@@ -28,7 +29,7 @@ final class Article
         return $this;
     }
 
-    public function getId(): String
+    public function getId(): Int
     {
         return $this->id;
     }
@@ -43,7 +44,7 @@ final class Article
         return $this->body;
     }
 
-    public function getCreationDate(): String
+    public function getCreationDate(): \DateTimeImmutable
     {
         return $this->creationDate;
     }
