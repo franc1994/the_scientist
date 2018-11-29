@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use LaravelDay\Article\UseCase\ListArticles\ListArticles;
 use Tests\TestCase;
 
 class ListArticlesTest extends TestCase
@@ -18,6 +19,10 @@ class ListArticlesTest extends TestCase
         $response = $this->get('api/articles');
 
         $response->assertStatus(200);
-        $response->assertJson([]);
+
+        $listArticles = new ListArticles();
+        $data = $listArticles();
+
+        $response->assertJson($data);
     }
 }
