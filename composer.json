@@ -59,7 +59,8 @@
     ],
     "fix": "@php vendor/bin/php-cs-fixer fix",
     "analyse": "@php vendor/bin/phpstan analyse app src tests",
-    "tests": "@php vendor/bin/phpunit"
+    "tests": "@php vendor/bin/phpunit",
+    "prepare": "composer fix && composer tests"
   },
   "config": {
     "preferred-install": "dist",

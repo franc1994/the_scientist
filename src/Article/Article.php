@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace LaravelDay\Article;
 
+use LaravelDay\Article\ValueObject\ArticleId;
 use LaravelDay\Article\ValueObject\Title;
 
 final class Article
 {
-    /** @var int */
+    /** @var ArticleId */
     private $id;
     /** @var Title */
     private $title;
@@ -18,7 +19,7 @@ final class Article
     private $creationDate;
 
     public function __construct(
-        int $id,
+        ArticleId $id,
         Title $title,
         string $body,
         \DateTimeImmutable $creationDate
@@ -31,7 +32,7 @@ final class Article
         return $this;
     }
 
-    public function getId(): Int
+    public function getId(): ArticleId
     {
         return $this->id;
     }

@@ -27,4 +27,8 @@ final class Title
     {
         return $this->title;
     }
+
+    private function __clone()
+    {
+    }
 }
